@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>{ifset title}{include title|striptags} | {/ifset}Českápřirovnání.cz</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Raleway+Dots&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{$basePath}/css/normalize.css">
+        <link rel="stylesheet" href="{$basePath}/css/skeleton.css">
+
+        {block head}{/block}
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row" style="margin-top: 20px;">
+
+                <div class="four columns"><a n:href="Comparison:default">ČESKÁpřirovnání.cz</a></div>
+                <div class="eight columns">
+                    <div class="row">
+
+                        <div class="four columns">
+                            <a class="button" n:href="Comparison:default"><i class="fa fa-compress"></i> Přirovnání</a>
+                            <a class="button" n:href="Tag:default"><i class="fa fa-tags"></i> Tagy</a>
+                            <a class="button" n:href="User:default"><i class="fa fa-user"></i> Autoři</a>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+            </div>
+
+            {include content}
+            <hr>
+            <div class="row" style="margin-top: 20px;">
+
+                <div class="twelve columns">
+                    <a n:href="Comparison:default">ČESKÁpřirovnání.cz</a> - největší databáze přirovnání na internetu
+                </div>
+            </div>
+        </div>
+
+
+        {block scripts}
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+        <script src="{$basePath}/js/main.js"></script>
+        {/block}
+    </body>
+</html>
